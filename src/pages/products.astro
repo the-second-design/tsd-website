@@ -1,10 +1,314 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-const metadata = { title: 'Products — The Second Design' };
+import { Icon } from 'astro-icon/components';
+
+const metadata = {
+  title: 'Products — The Second Design',
+  description:
+    'A small suite of workshops, courses, and programs we’ve built — from course-creator tools to Real World Ready.',
+};
 ---
+
 <Layout metadata={metadata}>
-  <section class="py-24 text-center">
-    <h1 class="text-4xl font-bold">Products</h1>
-    <p class="text-slate-400 mt-4">This page is coming soon.</p>
+
+  <!-- Hero ************************************************ -->
+
+  <section class="relative overflow-hidden py-24 md:py-28 bg-slate-50 dark:bg-slate-950">
+    <div
+      class="pointer-events-none absolute inset-0 bg-gradient-to-b
+             from-slate-100 via-white to-slate-100
+             dark:from-slate-900 dark:via-slate-950 dark:to-slate-900"
+    />
+    <div class="relative container max-w-5xl mx-auto space-y-8 text-center">
+      <p class="text-xs font-semibold tracking-[0.25em] text-slate-500 dark:text-slate-400 uppercase">
+        Products
+      </p>
+      <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-slate-900 dark:text-slate-50">
+        A small suite of learning products
+      </h1>
+      <p class="text-lg md:text-xl text-slate-700 dark:text-slate-300 leading-relaxed max-w-3xl mx-auto">
+        Tools, workshops, and programs we’ve built from our work with educators, creators, and students.
+        Some are short and lightweight; some are deep, multi-week journeys. All of them are designed
+        to be practical and immediately usable.
+      </p>
+    </div>
   </section>
+
+  <!-- Product grid **************************************** -->
+
+  <section class="py-20 bg-white dark:bg-slate-950">
+    <div class="container max-w-6xl mx-auto space-y-10">
+      <div class="grid gap-8 lg:grid-cols-2">
+
+        <!-- Course Creator Readiness Quiz -->
+        <article
+          class="rounded-3xl border bg-slate-50 border-slate-200 shadow-sm shadow-slate-200/70
+                 dark:bg-slate-900/70 dark:border-slate-800 dark:shadow-black/30 p-8 space-y-5"
+        >
+          <div class="flex items-center justify-between gap-3">
+            <h2 class="text-2xl font-semibold text-slate-900 dark:text-slate-50">
+              Course Creator Readiness Quiz
+            </h2>
+            <span
+              class="inline-flex items-center rounded-full bg-emerald-500/10 px-3 py-1 text-xs font-semibold
+                     text-emerald-700 dark:text-emerald-300"
+            >
+              Free · 5 minutes
+            </span>
+          </div>
+          <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+            A quick diagnostic that tells you whether you’re actually ready to build a course — and if not,
+            what’s missing. Useful if you’ve been “thinking about” a course for months but haven’t shipped.
+          </p>
+          <ul class="text-sm text-slate-600 dark:text-slate-400 space-y-1 list-disc list-inside">
+            <li>Clarifies whether you have enough clarity, audience, and assets</li>
+            <li>Suggests next concrete moves instead of vague motivation</li>
+          </ul>
+          <div class="pt-2">
+            <a
+              href="https://tally.so/r/wd0K2A"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center rounded-xl bg-slate-900 text-slate-50 px-4 py-2 text-sm font-semibold
+                     hover:bg-slate-800 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-100 transition"
+            >
+              Take the quiz
+              <Icon name="tabler:arrow-up-right" class="w-4 h-4 ml-1" />
+            </a>
+          </div>
+        </article>
+
+        <!-- AI-Assisted Course Creation (async) -->
+        <article
+          class="rounded-3xl border bg-slate-50 border-slate-200 shadow-sm shadow-slate-200/70
+                 dark:bg-slate-900/70 dark:border-slate-800 dark:shadow-black/30 p-8 space-y-5"
+        >
+          <div class="flex items-center justify-between gap-3">
+            <h2 class="text-2xl font-semibold text-slate-900 dark:text-slate-50">
+              AI-Assisted Course Creation
+            </h2>
+            <span
+              class="inline-flex items-center rounded-full bg-blue-500/10 px-3 py-1 text-xs font-semibold
+                     text-blue-700 dark:text-blue-300"
+            >
+              Async course
+            </span>
+          </div>
+          <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+            A step-by-step async course on using AI as a thinking partner while you design and ship a course.
+            Built for solo creators and in-house subject-matter experts who don’t have a big team.
+          </p>
+          <ul class="text-sm text-slate-600 dark:text-slate-400 space-y-1 list-disc list-inside">
+            <li>Turn fuzzy expertise into clear, teachable outcomes</li>
+            <li>Use AI for structure, examples, and draft content without losing your voice</li>
+          </ul>
+          <div class="pt-2">
+            <a
+              href="https://www.udemy.com/course/ai-assisted-course-creation-a-step-by-step-journey/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center rounded-xl bg-slate-900 text-slate-50 px-4 py-2 text-sm font-semibold
+                     hover:bg-slate-800 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-100 transition"
+            >
+              View on Udemy
+              <Icon name="tabler:arrow-up-right" class="w-4 h-4 ml-1" />
+            </a>
+          </div>
+        </article>
+
+        <!-- Course Creation Kickstarter (3-day workshop) -->
+        <article
+          class="rounded-3xl border bg-white border-slate-200 shadow-sm shadow-slate-200/70
+                 dark:bg-slate-900/80 dark:border-slate-800 dark:shadow-black/35 p-8 space-y-5"
+        >
+          <div class="flex items-center justify-between gap-3">
+            <h2 class="text-2xl font-semibold text-slate-900 dark:text-slate-50">
+              Course Creation Kickstarter
+            </h2>
+            <span
+              class="inline-flex items-center rounded-full bg-orange-500/10 px-3 py-1 text-xs font-semibold
+                     text-orange-700 dark:text-orange-300"
+            >
+              3-day live workshop
+            </span>
+          </div>
+          <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+            A short, intense workshop that takes you from “I should build a course” to a concrete course idea,
+            outline, and first testable version.
+          </p>
+          <ul class="text-sm text-slate-600 dark:text-slate-400 space-y-1 list-disc list-inside">
+            <li>Design your learner, promise, and journey</li>
+            <li>Leave with a draft outline and plan to launch</li>
+          </ul>
+          <div class="pt-2">
+            <a
+              href="https://maven.com/theseconddesign/online-course-kickstarter"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center rounded-xl bg-slate-900 text-slate-50 px-4 py-2 text-sm font-semibold
+                     hover:bg-slate-800 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-100 transition"
+            >
+              Learn more on Maven
+              <Icon name="tabler:arrow-up-right" class="w-4 h-4 ml-1" />
+            </a>
+          </div>
+        </article>
+
+        <!-- Design a Cohort-Based Course (flagship course) -->
+        <article
+          class="rounded-3xl border bg-white border-slate-200 shadow-sm shadow-slate-200/70
+                 dark:bg-slate-900/80 dark:border-slate-800 dark:shadow-black/35 p-8 space-y-5"
+        >
+          <div class="flex items-center justify-between gap-3">
+            <h2 class="text-2xl font-semibold text-slate-900 dark:text-slate-50">
+              Design a Cohort-Based Course
+            </h2>
+            <span
+              class="inline-flex items-center rounded-full bg-violet-500/10 px-3 py-1 text-xs font-semibold
+                     text-violet-700 dark:text-violet-300"
+            >
+              2-week live cohort · ⭐⭐⭐⭐⭐
+            </span>
+          </div>
+          <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+            A deep dive into designing, running, and improving a cohort-based course — based on years of work
+            with operators and educators who teach for a living.
+          </p>
+          <ul class="text-sm text-slate-600 dark:text-slate-400 space-y-1 list-disc list-inside">
+            <li>Design the arc of your cohort and its learning environment</li>
+            <li>Systems for facilitation, feedback, and continuous improvement</li>
+          </ul>
+          <div class="pt-2">
+            <a
+              href="https://maven.com/theseconddesign/designacbc"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center rounded-xl bg-slate-900 text-slate-50 px-4 py-2 text-sm font-semibold
+                     hover:bg-slate-800 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-100 transition"
+            >
+              See the cohort details
+              <Icon name="tabler:arrow-up-right" class="w-4 h-4 ml-1" />
+            </a>
+          </div>
+        </article>
+
+        <!-- Real World Ready -->
+        <article
+          class="rounded-3xl border bg-gradient-to-br from-slate-50 via-white to-slate-50 border-slate-200
+                 shadow-md shadow-slate-200/80
+                 dark:bg-gradient-to-br dark:from-slate-950 dark:via-slate-900 dark:to-slate-950
+                 dark:border-slate-800 dark:shadow-black/40 p-8 space-y-5 lg:col-span-2"
+        >
+          <div class="flex flex-wrap items-center justify-between gap-3">
+            <h2 class="text-2xl md:text-3xl font-semibold text-slate-900 dark:text-slate-50">
+              Real World Ready
+            </h2>
+            <span
+              class="inline-flex items-center rounded-full bg-slate-900 px-3 py-1 text-xs font-semibold
+                     text-slate-50 dark:bg-white dark:text-slate-900"
+            >
+              Flagship program for students & young professionals
+            </span>
+          </div>
+          <p class="text-sm md:text-base text-slate-700 dark:text-slate-300 leading-relaxed max-w-3xl">
+            A modular program that helps young people build real-world skills: starting things, navigating careers,
+            communicating clearly, working with others, and handling uncertainty without freezing.
+            Runs with colleges, nonprofits, and communities — often under co-branded names like
+            <span class="font-medium">Beyond the Blueprint</span>.
+          </p>
+          <ul class="text-sm text-slate-600 dark:text-slate-400 space-y-1 list-disc list-inside">
+            <li>30+ sessions that can be combined into series, bootcamps, or custom tracks</li>
+            <li>Co-designed with partners like TinkerHub and FOSS-aligned communities</li>
+          </ul>
+          <div class="pt-2 flex flex-wrap gap-3">
+            <a
+              href="/real-world-ready"
+              class="inline-flex items-center rounded-xl bg-slate-900 text-slate-50 px-4 py-2 text-sm font-semibold
+                     hover:bg-slate-800 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-100 transition"
+            >
+              Explore Real World Ready
+            </a>
+            <a
+              href="/contact"
+              class="inline-flex items-center rounded-xl border border-slate-400/70 px-4 py-2 text-sm font-semibold
+                     text-slate-800 hover:bg-slate-100
+                     dark:text-slate-100 dark:border-slate-600 dark:hover:bg-slate-800 transition"
+            >
+              Talk to us about running it
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials section ******************************* -->
+
+  <section class="py-24 bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800">
+    <div class="container max-w-5xl mx-auto space-y-10">
+      <div class="text-center space-y-4">
+        <p class="text-xs font-semibold tracking-[0.25em] text-slate-500 dark:text-slate-400 uppercase">
+          What people say
+        </p>
+        <h2 class="text-3xl font-semibold tracking-tight text-slate-900 dark:text-slate-50">
+          Proof from cohorts and partners
+        </h2>
+        <p class="text-slate-700 dark:text-slate-300 max-w-2xl mx-auto text-base leading-relaxed">
+          A few words from people who’ve gone through these products — either as learners or as partners
+          bringing them to their communities.
+        </p>
+      </div>
+
+      <div class="grid gap-8 md:grid-cols-2">
+        <!-- CBC course testimonial (generic placeholder text you can swap later) -->
+        <figure
+          class="rounded-3xl border bg-white border-slate-200 shadow-sm shadow-slate-200/80
+                 dark:bg-slate-900/80 dark:border-slate-800 dark:shadow-black/35 p-7 space-y-4"
+        >
+          <div class="flex items-center gap-3">
+            <div
+              class="inline-flex items-center justify-center rounded-full bg-violet-500/15 text-violet-300 p-2"
+            >
+              <Icon name="tabler:quote" class="w-4 h-4" />
+            </div>
+            <figcaption class="text-sm font-semibold text-slate-900 dark:text-slate-50">
+              Design a Cohort-Based Course
+            </figcaption>
+          </div>
+          <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+            “This was the first course that treated cohort design like a serious product, not an afterthought.
+            I walked away with a complete redesign of my program and a clear system for improving every cohort.”
+          </p>
+          <p class="text-xs text-slate-500 dark:text-slate-400">
+            — Participant, 5⭐ rated CBC design cohort
+          </p>
+        </figure>
+
+        <!-- Real World Ready testimonial (placeholder) -->
+        <figure
+          class="rounded-3xl border bg-white border-slate-200 shadow-sm shadow-slate-200/80
+                 dark:bg-slate-900/80 dark:border-slate-800 dark:shadow-black/35 p-7 space-y-4"
+        >
+          <div class="flex items-center gap-3">
+            <div
+              class="inline-flex items-center justify-center rounded-full bg-emerald-500/15 text-emerald-300 p-2"
+            >
+              <Icon name="tabler:quote" class="w-4 h-4" />
+            </div>
+            <figcaption class="text-sm font-semibold text-slate-900 dark:text-slate-50">
+              Real World Ready / Beyond the Blueprint
+            </figcaption>
+          </div>
+          <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+            “Students didn’t just ‘feel inspired’ for a weekend. They started writing to people, taking on
+            projects, and making concrete moves. The language of the program has become part of our community.”
+          </p>
+          <p class="text-xs text-slate-500 dark:text-slate-400">
+            — Partner organisation
+          </p>
+        </figure>
+      </div>
+    </div>
+  </section>
+
 </Layout>

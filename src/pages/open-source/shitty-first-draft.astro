@@ -1,0 +1,259 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import { Icon } from 'astro-icon/components';
+
+const metadata = {
+  title: 'Shitty First Draft — Open Source Session · The Second Design',
+  description:
+    'Open source release of The Second Design’s “Shitty First Draft” session — slide deck and participant workbook for educators and communities.',
+};
+---
+
+<Layout metadata={metadata}>
+
+  <!-- Hero ************************************* -->
+
+  <section class="relative overflow-hidden py-24 md:py-28 bg-slate-50 dark:bg-slate-950">
+    <div
+      class="pointer-events-none absolute inset-0 bg-gradient-to-b
+             from-slate-100 via-white to-slate-100
+             dark:from-slate-900 dark:via-slate-950 dark:to-violet-500/10"
+    />
+    <div class="relative container max-w-4xl mx-auto space-y-8">
+      <div class="space-y-3">
+        <p class="text-xs font-semibold tracking-[0.25em] text-slate-500 dark:text-slate-400 uppercase">
+          Open Source Session
+        </p>
+        <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-slate-900 dark:text-slate-50">
+          Shitty First Draft
+        </h1>
+        <p class="text-lg md:text-xl text-slate-700 dark:text-slate-300 leading-relaxed">
+          A session that helps learners lower the bar, get moving, and treat imperfect first versions
+          as a necessary part of serious work — not a personal failure.
+        </p>
+      </div>
+
+      <div class="flex flex-wrap gap-3 text-xs text-slate-600 dark:text-slate-400">
+        <span class="inline-flex items-center gap-1 rounded-full bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 px-3 py-1">
+          <Icon name="tabler:license" class="w-3.5 h-3.5" />
+          Open for reuse with attribution
+        </span>
+        <span class="inline-flex items-center gap-1 rounded-full bg-slate-900/5 dark:bg-slate-800 px-3 py-1">
+          <Icon name="tabler:presentation" class="w-3.5 h-3.5" />
+          Slide deck + workbook
+        </span>
+        <span class="inline-flex items-center gap-1 rounded-full bg-blue-500/10 text-blue-700 dark:text-blue-300 px-3 py-1">
+          <Icon name="tabler:users-group" class="w-3.5 h-3.5" />
+          Designed for cohorts & workshops
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- What the session does ************************ -->
+
+  <section
+    class="py-20 bg-white border-y border-slate-200
+           dark:bg-slate-950/80 dark:border-slate-800"
+  >
+    <div class="container max-w-5xl mx-auto grid gap-12 md:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] items-start">
+      <!-- Text -->
+      <div class="space-y-8">
+        <div class="space-y-3">
+          <h2 class="text-2xl md:text-3xl font-semibold tracking-tight text-slate-900 dark:text-slate-50">
+            Why “Shitty First Draft” exists
+          </h2>
+          <p class="text-sm md:text-base text-slate-700 dark:text-slate-300 leading-relaxed">
+            Most students (and adults) are stuck not because they lack ideas, but because they’re afraid of
+            making something that looks stupid, incomplete, or “not good enough yet”. So they never ship the
+            first version — and nothing compounds.
+          </p>
+          <p class="text-sm md:text-base text-slate-700 dark:text-slate-300 leading-relaxed">
+            This session gives people a structured push to make that first ugly version anyway — on purpose —
+            and see that it’s a feature, not a bug, of doing meaningful work.
+          </p>
+        </div>
+
+        <div class="grid gap-4 md:grid-cols-2">
+          <div class="rounded-2xl border border-slate-200 bg-slate-50/80 p-5 dark:border-slate-800 dark:bg-slate-900/70">
+            <h3 class="text-sm font-semibold text-slate-900 dark:text-slate-50 mb-1.5">
+              Core ideas it lands
+            </h3>
+            <ul class="text-xs md:text-sm text-slate-700 dark:text-slate-300 space-y-1.5">
+              <li>• First drafts are supposed to be rough, not impressive.</li>
+              <li>• Momentum beats perfection — especially early.</li>
+              <li>• Feedback is only possible once something exists.</li>
+            </ul>
+          </div>
+
+          <div class="rounded-2xl border border-slate-200 bg-slate-50/80 p-5 dark:border-slate-800 dark:bg-slate-900/70">
+            <h3 class="text-sm font-semibold text-slate-900 dark:text-slate-50 mb-1.5">
+              Where it works best
+            </h3>
+            <ul class="text-xs md:text-sm text-slate-700 dark:text-slate-300 space-y-1.5">
+              <li>• Student cohorts starting projects or portfolios</li>
+              <li>• Fellowships, makerspaces, and hackathons</li>
+              <li>• Any program stuck in “thinking, not doing” mode</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick facts card -->
+      <div
+        class="rounded-2xl border bg-slate-50/80 border-slate-200 shadow-sm shadow-slate-200/80
+               dark:bg-slate-900/80 dark:border-slate-800/80 dark:shadow-black/40 p-6 space-y-4"
+      >
+        <h3 class="text-sm font-semibold text-slate-900 dark:text-slate-50 flex items-center gap-2">
+          <Icon name="tabler:info-circle" class="w-4 h-4" />
+          Session snapshot
+        </h3>
+        <dl class="space-y-2 text-xs text-slate-700 dark:text-slate-300">
+          <div class="flex justify-between gap-4">
+            <dt class="text-slate-500 dark:text-slate-400">Format</dt>
+            <dd class="text-right">Live session + hands-on drafting</dd>
+          </div>
+          <div class="flex justify-between gap-4">
+            <dt class="text-slate-500 dark:text-slate-400">Length</dt>
+            <dd class="text-right">~60–90 minutes (flexible)</dd>
+          </div>
+          <div class="flex justify-between gap-4">
+            <dt class="text-slate-500 dark:text-slate-400">Best for</dt>
+            <dd class="text-right">Groups of 20–80 learners</dd>
+          </div>
+          <div class="flex justify-between gap-4">
+            <dt class="text-slate-500 dark:text-slate-400">Prerequisites</dt>
+            <dd class="text-right">A project, idea, or goal they care about</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- Downloads ********************************** -->
+
+  <section class="py-24 bg-slate-50 dark:bg-slate-950">
+    <div class="container max-w-4xl mx-auto space-y-8">
+      <div class="space-y-3 text-center">
+        <h2 class="text-2xl md:text-3xl font-semibold tracking-tight text-slate-900 dark:text-slate-50">
+          Download the materials
+        </h2>
+        <p class="text-sm md:text-base text-slate-700 dark:text-slate-300 max-w-2xl mx-auto leading-relaxed">
+          These files are ready to use as-is, but you’re encouraged to adapt them to your learners and context.
+          Translate, rearrange, add your own stories — just keep the attribution.
+        </p>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-2">
+        <!-- Deck -->
+        <a
+          href="/open-source/files/sfd-deck.pptx"
+          class="group rounded-2xl border bg-white border-slate-200 shadow-sm shadow-slate-200/80
+                 dark:bg-slate-900/80 dark:border-slate-800/80 dark:shadow-black/40
+                 p-6 flex flex-col justify-between"
+          download
+        >
+          <div class="space-y-3">
+            <div class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">
+              <Icon name="tabler:presentation-analytics" class="w-4 h-4" />
+              Slide deck
+            </div>
+            <h3 class="text-sm md:text-base font-semibold text-slate-900 dark:text-slate-50">
+              Facilitator slide deck (PPTX)
+            </h3>
+            <p class="text-xs md:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+              Slides for running the session end-to-end. Includes prompts, framing, and scaffolding
+              for taking participants from “idea in head” to a concrete shitty first draft.
+            </p>
+          </div>
+          <div class="mt-4 text-xs text-blue-600 dark:text-blue-300 font-medium flex items-center gap-1">
+            Download deck
+            <Icon
+              name="tabler:download"
+              class="w-4 h-4 group-hover:translate-y-0.5 transition-transform"
+            />
+          </div>
+        </a>
+
+        <!-- Workbook -->
+        <a
+          href="/open-source/files/sfd-workbook.pdf"
+          class="group rounded-2xl border bg-white border-slate-200 shadow-sm shadow-slate-200/80
+                 dark:bg-slate-900/80 dark:border-slate-800/80 dark:shadow-black/40
+                 p-6 flex flex-col justify-between"
+          download
+        >
+          <div class="space-y-3">
+            <div class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">
+              <Icon name="tabler:notebook" class="w-4 h-4" />
+              Workbook
+            </div>
+            <h3 class="text-sm md:text-base font-semibold text-slate-900 dark:text-slate-50">
+              Participant workbook (PDF)
+            </h3>
+            <p class="text-xs md:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+              Printable / digital workbook that guides learners through choosing a project, drafting their
+              first version, and reflecting on what they learned from shipping something imperfect.
+            </p>
+          </div>
+          <div class="mt-4 text-xs text-blue-600 dark:text-blue-300 font-medium flex items-center gap-1">
+            Download workbook
+            <Icon
+              name="tabler:download"
+              class="w-4 h-4 group-hover:translate-y-0.5 transition-transform"
+            />
+          </div>
+        </a>
+      </div>
+
+      <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed max-w-2xl">
+        <span class="font-semibold">Note:</span> Update the file paths above to match where you actually place the
+        files inside your <code class="font-mono text-[10px] bg-slate-100 dark:bg-slate-900 px-1 rounded">public/</code> directory
+        (for example, <code class="font-mono text-[10px] bg-slate-100 dark:bg-slate-900 px-1 rounded">public/open-source/files/…</code>).
+      </p>
+    </div>
+  </section>
+
+  <!-- License / attribution ************************ -->
+
+  <section
+    class="py-20 bg-white border-t border-slate-200
+           dark:bg-slate-950/90 dark:border-slate-800"
+  >
+    <div class="container max-w-4xl mx-auto space-y-6 text-sm md:text-base">
+      <h2 class="text-xl md:text-2xl font-semibold tracking-tight text-slate-900 dark:text-slate-50">
+        How you’re allowed to use this
+      </h2>
+
+      <div class="grid gap-8 md:grid-cols-2">
+        <div class="space-y-3 text-slate-700 dark:text-slate-300">
+          <h3 class="text-sm font-semibold text-slate-900 dark:text-slate-50">
+            You can:
+          </h3>
+          <ul class="space-y-1.5 text-sm">
+            <li>• Run this session with your own students or community.</li>
+            <li>• Adapt, translate, and remix the material for your context.</li>
+            <li>• Include it as one component inside a larger program.</li>
+          </ul>
+        </div>
+
+        <div class="space-y-3 text-slate-700 dark:text-slate-300">
+          <h3 class="text-sm font-semibold text-slate-900 dark:text-slate-50">
+            Please:
+          </h3>
+          <ul class="space-y-1.5 text-sm">
+            <li>• Credit <span class="font-semibold">The Second Design</span> as the original creators.</li>
+            <li>• Link back to this page where reasonable (slides, docs, descriptions).</li>
+            <li>• Don’t sell this exact material as a standalone paid product without adding your own work.</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="text-xs text-slate-500 dark:text-slate-400">
+        If you want a more formal license (for example, for a large institution or partner program),
+        just reach out via the contact page and we can set that up.
+      </p>
+    </div>
+  </section>
+
+</Layout>
