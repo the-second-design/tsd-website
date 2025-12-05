@@ -1,79 +1,174 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import HeroText from '~/components/widgets/HeroText.astro';
-import ContactUs from '~/components/widgets/Contact.astro';
-import Features2 from '~/components/widgets/Features2.astro';
 
 const metadata = {
-  title: 'Contact',
+  title: 'Contact — The Second Design',
+  description:
+    'Tell us about your learners, your context, and what you want to make possible. We’ll review it and reply with next steps for a short inquiry call.',
 };
 ---
 
 <Layout metadata={metadata}>
-  <!-- HeroText Widget ******************* -->
+  <!-- Hero -->
+  <section class="bg-slate-50 border-b border-slate-200 dark:bg-slate-950 dark:border-slate-900">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 py-20 text-center space-y-4">
+      <h1 class="text-4xl sm:text-5xl font-semibold tracking-tight text-slate-900 dark:text-white">
+        Contact
+      </h1>
+      <p class="text-lg sm:text-xl text-slate-700 dark:text-slate-300 leading-relaxed max-w-2xl mx-auto">
+        Tell us a bit about your learners, your context, and what you want to make possible.
+        We’ll review it and get back with next steps for a short inquiry call.
+      </p>
+    </div>
+  </section>
 
-  <HeroText tagline="Contact" title="Let's Connect!" />
+  <!-- Main content -->
+  <section class="bg-white dark:bg-slate-950">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16 md:py-20">
+      <div class="grid gap-12 md:grid-cols-2 items-start">
 
-  <ContactUs
-    id="form"
-    title="Drop us a message today!"
-    subtitle="For quicker answers, explore our FAQs section. You may find the solution you're looking  for right there! If not, our support team is delighted to help you."
-    inputs={[
-      {
-        type: 'text',
-        name: 'name',
-        label: 'Name',
-      },
-      {
-        type: 'email',
-        name: 'email',
-        label: 'Email',
-      },
-    ]}
-    textarea={{
-      label: 'Message',
-    }}
-    disclaimer={{
-      label:
-        'By submitting this contact form, you acknowledge and agree to the collection of your personal information.',
-    }}
-    description="Our support team typically responds within 24 business hours."
-  />
+        <!-- Left: guidance text -->
+        <div class="space-y-6 text-slate-900 dark:text-slate-200">
+          <h2 class="text-2xl font-semibold">
+            How we like to use this form
+          </h2>
 
-  <!-- Features2 Widget ************** -->
+          <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+            Use this to start a conversation about:
+          </p>
 
-  <Features2
-    title="We are here to help!"
-    items={[
-      {
-        title: 'General support',
-        description: `Chat with us for inquiries related to account management, website navigation, payment issues, accessing purchased templates or general questions about the website's functionality.`,
-      },
-      {
-        title: 'Contact sales',
-        description:
-          'Chat with us for questions about purchases, customization options, licensing for commercial use, inquiries about specific template, etc.',
-      },
-      {
-        title: 'Technical support',
-        description:
-          'Chat with us when facing issues like template installation, problems editing difficulties, compatibility issues with software or download errors, or other technical challenges related to using the templates.',
-      },
-      {
-        title: 'Phone',
-        description: '+1 (234) 567-890',
-        icon: 'tabler:headset',
-      },
-      {
-        title: 'Email',
-        description: 'contact@support.com',
-        icon: 'tabler:mail',
-      },
-      {
-        title: 'Location',
-        description: '1234 Lorem Ipsum St, 12345, Miami, EEUU',
-        icon: 'tabler:map-pin',
-      },
-    ]}
-  />
+          <ul class="space-y-2 text-sm text-slate-800 dark:text-slate-200">
+            <li>• Designing a new learning program for your organisation</li>
+            <li>• Running Real World Ready with your students or community</li>
+            <li>• Reviewing or improving an existing program</li>
+          </ul>
+
+          <p class="text-xs text-slate-500 dark:text-slate-500 leading-relaxed max-w-md">
+            If you’re not sure how to describe what you need, that’s fine.
+            Write in plain language. We care more about understanding your reality
+            than getting a “perfect brief”.
+          </p>
+        </div>
+
+        <!-- Right: form card -->
+        <div
+          class="rounded-3xl border bg-white text-slate-900 shadow-xl p-6 sm:p-8
+                 border-slate-200 shadow-slate-200/80
+                 dark:bg-slate-900 dark:text-slate-50 dark:border-slate-800 dark:shadow-black/60"
+        >
+          <form
+            name="contact"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            class="space-y-5"
+          >
+            <!-- Netlify hidden fields -->
+            <input type="hidden" name="form-name" value="contact" />
+            <p class="hidden">
+              <label>
+                Don’t fill this out if you’re human: <input name="bot-field" />
+              </label>
+            </p>
+
+            <div class="space-y-1">
+              <label class="text-xs font-medium text-slate-700 dark:text-slate-300" for="name">Your name</label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                required
+                class="w-full rounded-xl border px-3 py-2 text-sm
+                       bg-white border-slate-300 text-slate-900 placeholder:text-slate-400
+                       focus:outline-none focus:ring-2 focus:ring-slate-300 focus:border-slate-400
+                       dark:bg-slate-950 dark:border-slate-700 dark:text-slate-50 dark:placeholder:text-slate-500 dark:focus:ring-slate-300"
+              />
+            </div>
+
+            <div class="space-y-1">
+              <label class="text-xs font-medium text-slate-700 dark:text-slate-300" for="email">Email</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                required
+                class="w-full rounded-xl border px-3 py-2 text-sm
+                       bg-white border-slate-300 text-slate-900 placeholder:text-slate-400
+                       focus:outline-none focus:ring-2 focus:ring-slate-300 focus:border-slate-400
+                       dark:bg-slate-950 dark:border-slate-700 dark:text-slate-50 dark:placeholder:text-slate-500 dark:focus:ring-slate-300"
+              />
+            </div>
+
+            <div class="space-y-1">
+              <label class="text-xs font-medium text-slate-700 dark:text-slate-300" for="org">
+                Organisation / context
+              </label>
+              <input
+                id="org"
+                name="organisation"
+                type="text"
+                placeholder="College, NGO, company, community…"
+                class="w-full rounded-xl border px-3 py-2 text-sm
+                       bg-white border-slate-300 text-slate-900 placeholder:text-slate-400
+                       focus:outline-none focus:ring-2 focus:ring-slate-300 focus:border-slate-400
+                       dark:bg-slate-950 dark:border-slate-700 dark:text-slate-50 dark:placeholder:text-slate-500 dark:focus:ring-slate-300"
+              />
+            </div>
+
+            <div class="space-y-1">
+              <label class="text-xs font-medium text-slate-700 dark:text-slate-300" for="interest">
+                What would you like to explore?
+              </label>
+              <select
+                id="interest"
+                name="interest"
+                class="w-full rounded-xl border px-3 py-2 text-sm
+                       bg-white border-slate-300 text-slate-900
+                       focus:outline-none focus:ring-2 focus:ring-slate-300 focus:border-slate-400
+                       dark:bg-slate-950 dark:border-slate-700 dark:text-slate-50 dark:focus:ring-slate-300"
+              >
+                <option value="">Choose an option</option>
+                <option value="new-program">Designing a new learning program</option>
+                <option value="real-world-ready">Running Real World Ready</option>
+                <option value="improve-existing">Improving an existing program</option>
+                <option value="other">Something else</option>
+              </select>
+            </div>
+
+            <div class="space-y-1">
+              <label class="text-xs font-medium text-slate-700 dark:text-slate-300" for="message">
+                Tell us a bit about your learners and what you want to make possible
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                class="w-full rounded-xl border px-3 py-2 text-sm resize-none
+                       bg-white border-slate-300 text-slate-900 placeholder:text-slate-400
+                       focus:outline-none focus:ring-2 focus:ring-slate-300 focus:border-slate-400
+                       dark:bg-slate-950 dark:border-slate-700 dark:text-slate-50 dark:placeholder:text-slate-500 dark:focus:ring-slate-300"
+              ></textarea>
+            </div>
+
+            <div class="pt-2">
+              <button
+                type="submit"
+                class="inline-flex items-center justify-center rounded-xl px-4 py-2.5 text-sm font-semibold
+                       bg-slate-900 text-slate-50 shadow-sm hover:bg-slate-800
+                       dark:bg-white dark:text-slate-900 dark:hover:bg-slate-100
+                       transition"
+              >
+                Send message
+              </button>
+            </div>
+
+            <p class="text-[11px] text-slate-500 dark:text-slate-500 leading-relaxed pt-1">
+              We read every message. If it’s not a fit, we’ll say so clearly.
+              If it is, we’ll propose a short call to understand the context better.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
 </Layout>

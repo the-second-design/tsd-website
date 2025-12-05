@@ -1,228 +1,205 @@
 ---
-import Features2 from '~/components/widgets/Features2.astro';
-import Features3 from '~/components/widgets/Features3.astro';
-import Hero from '~/components/widgets/Hero.astro';
-import Stats from '~/components/widgets/Stats.astro';
-import Steps2 from '~/components/widgets/Steps2.astro';
 import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
-  title: 'About us',
+  title: 'About — The Second Design',
+  description:
+    'The Second Design is an education design studio led by Gautham and Aruna, focused on building real-world learning environments.',
 };
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
 
-  <Hero
-    tagline="About us"
-    image={{
-      src: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Caos Image',
-    }}
+  <!-- Hero ************************************* -->
+  <section class="py-24 text-center bg-white dark:bg-slate-950">
+    <div class="container max-w-3xl mx-auto space-y-6 px-4 sm:px-6">
+      <h1 class="text-4xl sm:text-5xl font-bold tracking-tight text-slate-900 dark:text-slate-50">
+        About The Second Design
+      </h1>
+      <p class="text-lg sm:text-xl text-slate-700 dark:text-slate-300 leading-relaxed">
+        We are an education design studio that cares deeply about how people learn in the real world —
+        not just how they pass exams.
+      </p>
+    </div>
+  </section>
+
+  <!-- Who we are ******************************* -->
+  <section
+    class="py-20 text-center border-y
+           border-slate-200 bg-slate-50
+           dark:bg-slate-950/70 dark:border-slate-800"
   >
-    <Fragment slot="title">
-      Elevate your online presence with our <br />
-      <span class="text-accent dark:text-white"> Beautiful Website Templates</span>
-    </Fragment>
+    <div class="container max-w-5xl mx-auto space-y-10 px-4 sm:px-6">
+      <h2 class="text-3xl font-semibold tracking-tight text-slate-900 dark:text-slate-50">
+        Who is behind The Second Design?
+      </h2>
 
-    <Fragment slot="subtitle">
-      Donec efficitur, ipsum quis congue luctus, mauris magna convallis mauris, eu auctor nisi lectus non augue. Donec
-      quis lorem non massa vulputate efficitur ac at turpis. Sed tincidunt ex a nunc convallis, et lobortis nisi tempus.
-      Suspendisse vitae nisi eget tortor luctus maximus sed non lectus.
-    </Fragment>
-  </Hero>
+      <div class="grid gap-10 md:grid-cols-2 text-left">
+        <!-- Gautham -->
+        <div
+          class="rounded-2xl p-8 space-y-4 border
+                 bg-white border-slate-200 shadow-sm shadow-slate-200/80
+                 dark:bg-slate-900/60 dark:border-slate-800/70 dark:shadow-black/25"
+        >
+          <h3 class="text-2xl font-semibold text-slate-900 dark:text-slate-50">
+            Gautham
+          </h3>
+          <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+            Educator, builder, and long-time experimenter in the Indian education ecosystem.
+            Over the last decade, Gautham has worked across student startup incubators, ed-tech, and
+            real-world skill building programs — always with one question in mind:
+            <span class="italic">“What actually helps people move in the real world?”</span>
+          </p>
+          <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+            At The Second Design, he focuses on program architecture, learner experience, and making sure
+            every initiative is grounded in reality, not buzzwords.
+          </p>
+        </div>
 
-  <!-- Stats Widget ****************** -->
+        <!-- Aruna -->
+        <div
+          class="rounded-2xl p-8 space-y-4 border
+                 bg-white border-slate-200 shadow-sm shadow-slate-200/80
+                 dark:bg-slate-900/60 dark:border-slate-800/70 dark:shadow-black/25"
+        >
+          <h3 class="text-2xl font-semibold text-slate-900 dark:text-slate-50">
+            Aruna
+          </h3>
+          <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+            Aruna brings the rigor of organised academia and research into our work.
+            With a background that includes astrophysics research at Harvard, she has spent years
+            thinking about how complex ideas can be taught clearly, honestly, and playfully.
+          </p>
+          <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+            At The Second Design, she leads curriculum design, scaffolding of concepts, and the emotional
+            safety of the learning space — so that students and participants can actually try, fail, and grow.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <Stats
-    title="Statistics about us"
-    stats={[
-      { title: 'Offices', amount: '4' },
-      { title: 'Employees', amount: '248' },
-      { title: 'Templates', amount: '12' },
-      { title: 'Awards', amount: '24' },
-    ]}
-  />
+  <!-- What we believe ************************** -->
+  <section class="py-24 text-center bg-white dark:bg-slate-950">
+    <div class="container max-w-4xl mx-auto space-y-10 px-4 sm:px-6">
+      <h2 class="text-3xl font-semibold tracking-tight text-slate-900 dark:text-slate-50">
+        What we believe about learning
+      </h2>
 
-  <!-- Features3 Widget ************** -->
+      <div class="grid gap-10 md:grid-cols-3 text-left">
+        <div class="space-y-3">
+          <h3 class="text-xl font-semibold text-slate-900 dark:text-slate-50">
+            Agency over compliance
+          </h3>
+          <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+            Real learning shows up as initiative — the ability to start, ask, ship, and adapt.
+            We design for agency first, not attendance or completion rates.
+          </p>
+        </div>
 
-  <Features3
-    title="Our templates"
-    subtitle="Etiam scelerisque, enim eget vestibulum luctus, nibh mauris blandit nulla, nec vestibulum risus justo ut enim. Praesent lacinia diam et ante imperdiet euismod."
-    columns={3}
-    isBeforeContent={true}
-    items={[
-      {
-        title: 'Educational',
-        description:
-          'Morbi faucibus luctus quam, sit amet aliquet felis tempor id. Cras augue massa, ornare quis dignissim a, molestie vel nulla.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Interior Design',
-        description:
-          'Vivamus porttitor, tortor convallis aliquam pretium, turpis enim consectetur elit, vitae egestas purus erat ac nunc nulla.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Photography',
-        description:
-          'Duis sed lectus in nisl vehicula porttitor eget quis odio. Aliquam erat volutpat. Nulla eleifend nulla id sem fermentum.',
-        icon: 'tabler:template',
-      },
-    ]}
-  />
+        <div class="space-y-3">
+          <h3 class="text-xl font-semibold text-slate-900 dark:text-slate-50">
+            Systems over hacks
+          </h3>
+          <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+            Instead of one-off tips and tricks, we focus on mental models and systems that
+            learners can reuse across domains and through different phases of life.
+          </p>
+        </div>
 
-  <!-- Features3 Widget ************** -->
+        <div class="space-y-3">
+          <h3 class="text-xl font-semibold text-slate-900 dark:text-slate-50">
+            Feeling matters
+          </h3>
+          <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+            People don’t just learn with their brains. Safety, identity, and emotion shape whether a
+            program lands or bounces off. We design for that layer explicitly.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <Features3
-    columns={3}
-    isAfterContent={true}
-    items={[
-      {
-        title: 'E-commerce',
-        description:
-          'Rutrum non odio at vehicula. Proin ipsum justo, dignissim in vehicula sit amet, dignissim id quam. Sed ac tincidunt sapien.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Blog',
-        description:
-          'Nullam efficitur volutpat sem sed fringilla. Suspendisse et enim eu orci volutpat laoreet ac vitae libero.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Business',
-        description:
-          'Morbi et elit finibus, facilisis justo ut, pharetra ipsum. Donec efficitur, ipsum quis congue luctus, mauris magna.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Branding',
-        description:
-          'Suspendisse vitae nisi eget tortor luctus maximus sed non lectus. Cras malesuada pretium placerat. Nullam venenatis dolor a ante rhoncus.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Medical',
-        description:
-          'Vestibulum malesuada lacus id nibh posuere feugiat. Nam volutpat nulla a felis ultrices, id suscipit mauris congue. In hac habitasse platea dictumst.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Fashion Design',
-        description:
-          'Maecenas eu tellus eget est scelerisque lacinia et a diam. Aliquam velit lorem, vehicula id fermentum et, rhoncus et purus.',
-        icon: 'tabler:template',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
-      alt: 'Colorful Image',
-    }}
-  />
+  <!-- What we actually do ********************** -->
+  <section
+    class="py-20 text-center border-y
+           border-slate-200 bg-slate-50
+           dark:bg-slate-950/70 dark:border-slate-800"
+  >
+    <div class="container max-w-4xl mx-auto space-y-10 px-4 sm:px-6">
+      <h2 class="text-3xl font-semibold tracking-tight text-slate-900 dark:text-slate-50">
+        What we actually do day to day
+      </h2>
 
-  <!-- Steps2 Widget ****************** -->
+      <p class="text-slate-700 dark:text-slate-300 max-w-2xl mx-auto text-base leading-relaxed">
+        Most of our work falls into two buckets:
+        <span class="font-semibold"> designing programs for others</span> and
+        <span class="font-semibold"> running our own flagship program, Real World Ready.</span>
+      </p>
 
-  <Steps2
-    title="Our values"
-    subtitle="Maecenas eu tellus eget est scelerisque lacinia et a diam. Aliquam velit lorem, vehicula id fermentum et, rhoncus et purus. Nulla facilisi. Vestibulum malesuada lacus."
-    items={[
-      {
-        title: 'Customer-centric approach',
-        description:
-          'Donec id nibh neque. Quisque et fermentum tortor. Fusce vitae dolor a mauris dignissim commodo. Ut eleifend luctus condimentum.',
-      },
-      {
-        title: 'Constant Improvement',
-        description:
-          'Phasellus laoreet fermentum venenatis. Vivamus dapibus pulvinar arcu eget mattis. Fusce eget mauris leo.',
-      },
-      {
-        title: 'Ethical Practices',
-        description:
-          'Vestibulum imperdiet libero et lectus molestie, et maximus augue porta. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
-      },
-    ]}
-  />
+      <div class="grid gap-10 md:grid-cols-2 text-left">
+        <div
+          class="rounded-2xl p-8 space-y-3 border
+                 bg-white border-slate-200 shadow-sm shadow-slate-200/80
+                 dark:bg-slate-900/60 dark:border-slate-800/70 dark:shadow-black/25"
+        >
+          <h3 class="text-xl font-semibold text-slate-900 dark:text-slate-50">
+            Consulting & program design
+          </h3>
+          <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+            We partner with businesses, nonprofits, and colleges to design learning environments:
+            academies, finishing-school style tracks, youth programs, and internal capability-building initiatives.
+          </p>
+          <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+            You bring the domain expertise. We help shape it into curriculum, experiences, and structures that
+            people can actually move through.
+          </p>
+        </div>
 
-  <!-- Steps2 Widget ****************** -->
+        <div
+          class="rounded-2xl p-8 space-y-3 border
+                 bg-white border-slate-200 shadow-sm shadow-slate-200/80
+                 dark:bg-slate-900/60 dark:border-slate-800/70 dark:shadow-black/25"
+        >
+          <h3 class="text-xl font-semibold text-slate-900 dark:text-slate-50">
+            Real World Ready
+          </h3>
+          <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+            Our own flagship program for students and young professionals, often run under co-branded names
+            with partners like TinkerHub. It focuses on agency, system design for life, and navigating an uncertain future.
+          </p>
+          <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+            You can think of it as a parallel “real-world curriculum” that sits alongside formal education.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <Steps2
-    title="Achievements"
-    subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mi risus tempus nulla, sed porttitor est nibh at nulla."
-    isReversed={true}
-    callToAction={{
-      text: 'See more',
-      href: '/',
-    }}
-    items={[
-      {
-        title: 'Global reach',
-        description: 'Nam malesuada urna in enim imperdiet tincidunt. Phasellus non tincidunt nisi, at elementum mi.',
-        icon: 'tabler:globe',
-      },
-      {
-        title: 'Positive customer feedback and reviews',
-        description:
-          'Cras semper nulla leo, eget laoreet erat cursus sed. Praesent faucibus massa in purus iaculis dictum.',
-        icon: 'tabler:message-star',
-      },
-      {
-        title: 'Awards and recognition as industry experts',
-        description:
-          'Phasellus lacinia cursus velit, eu malesuada magna pretium eu. Etiam aliquet tellus purus, blandit lobortis ex rhoncus vitae.',
-        icon: 'tabler:award',
-      },
-    ]}
-  />
+  <!-- CTA ************************************** -->
+  <section class="py-24 text-center bg-white dark:bg-slate-950">
+    <div class="container max-w-3xl mx-auto space-y-6 px-4 sm:px-6">
+      <h2 class="text-3xl font-semibold tracking-tight text-slate-900 dark:text-slate-50">
+        Want to design a serious learning experience?
+      </h2>
+      <p class="text-slate-700 dark:text-slate-300 text-base leading-relaxed">
+        If you’re thinking about a program for your students, community, or team, we’re happy to explore it with you.
+        No pitch deck, no jargon — just an honest conversation about what you’re trying to make possible.
+      </p>
 
-  <!-- Features2 Widget ************** -->
+      <div class="flex flex-col sm:flex-row justify-center gap-4 pt-4">
+        <a
+          href="/contact"
+          class="inline-flex items-center justify-center rounded-xl
+                 bg-slate-900 text-slate-50 px-6 py-3 text-sm font-semibold
+                 shadow-lg shadow-blue-500/30 hover:bg-slate-800
+                 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-100
+                 transition"
+        >
+          Book an inquiry call
+        </a>
+      </div>
+    </div>
+  </section>
 
-  <Features2
-    title="Our locations"
-    tagline="Find us"
-    columns={4}
-    items={[
-      {
-        title: 'EE.UU',
-        description: '1234 Lorem Ipsum St, 12345, Miami',
-      },
-      {
-        title: 'Spain',
-        description: '5678 Lorem Ipsum St, 56789, Madrid',
-      },
-      {
-        title: 'Australia',
-        description: '9012 Lorem Ipsum St, 90123, Sydney',
-      },
-      {
-        title: 'Brazil',
-        description: '3456 Lorem Ipsum St, 34567, São Paulo',
-      },
-    ]}
-  />
-
-  <!-- Features2 Widget ************** -->
-
-  <Features2
-    title="Technical Support"
-    tagline="Contact us"
-    columns={2}
-    items={[
-      {
-        title: 'Chat with us',
-        description:
-          'Integer luctus laoreet libero, auctor varius purus rutrum sit amet. Ut nec molestie nisi, quis eleifend mi.',
-        icon: 'tabler:messages',
-      },
-      {
-        title: 'Call us',
-        description:
-          'Mauris faucibus finibus orci, in posuere elit viverra non. In hac habitasse platea dictumst. Cras lobortis metus a hendrerit congue.',
-        icon: 'tabler:headset',
-      },
-    ]}
-  />
 </Layout>

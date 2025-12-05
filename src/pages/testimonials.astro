@@ -1,0 +1,203 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Testimonials — The Second Design',
+  description:
+    'What partners, organisations, and learners say about working with The Second Design.',
+};
+---
+
+<Layout metadata={metadata}>
+
+  <!-- Hero ************************************* -->
+  <section class="py-24 text-center bg-white dark:bg-slate-950">
+    <div class="container max-w-3xl mx-auto space-y-6 px-4 sm:px-6">
+      <h1 class="text-4xl sm:text-5xl font-bold tracking-tight text-slate-900 dark:text-slate-50">
+        Testimonials
+      </h1>
+      <p class="text-lg sm:text-xl text-slate-700 dark:text-slate-300 leading-relaxed">
+        What partners and learners say about working with us.
+      </p>
+    </div>
+  </section>
+
+  <!-- Partner Logos / Mini Quotes *************** -->
+  <section
+    class="py-20 text-center border-y
+           border-slate-200 bg-slate-50
+           dark:bg-slate-950/70 dark:border-slate-800"
+  >
+    <div class="container max-w-5xl mx-auto space-y-12 px-4 sm:px-6">
+      <h2 class="text-3xl font-semibold tracking-tight text-slate-900 dark:text-slate-50">
+        Trusted by progressive organisations
+      </h2>
+
+      <!-- Logo row -->
+      <div class="flex flex-wrap justify-center gap-10 opacity-80">
+        <img src="/logos/tinkerhub.png" alt="TinkerHub" class="h-10" />
+        <img src="/logos/foss.png" alt="FOSS" class="h-10" />
+        <img src="/logos/pupilfirst.png" alt="Pupilfirst" class="h-10" />
+        <!-- Add more logos as needed -->
+      </div>
+
+      <!-- Mini quotes -->
+      <div class="grid gap-8 md:grid-cols-3 text-left">
+        <div
+          class="rounded-2xl p-6 space-y-3 border
+                 bg-white border-slate-200 shadow-sm shadow-slate-200/80
+                 dark:bg-slate-900/60 dark:border-slate-800/70 dark:shadow-black/25"
+        >
+          <p class="text-sm text-slate-700 dark:text-slate-300">
+            “Working with The Second Design changed the way our students approach learning.”
+          </p>
+          <p class="text-xs text-slate-500 dark:text-slate-400">— Partner organisation</p>
+        </div>
+
+        <div
+          class="rounded-2xl p-6 space-y-3 border
+                 bg-white border-slate-200 shadow-sm shadow-slate-200/80
+                 dark:bg-slate-900/60 dark:border-slate-800/70 dark:shadow-black/25"
+        >
+          <p class="text-sm text-slate-700 dark:text-slate-300">
+            “Their frameworks and pedagogy made our program vastly more effective.”
+          </p>
+          <p class="text-xs text-slate-500 dark:text-slate-400">— Program lead</p>
+        </div>
+
+        <div
+          class="rounded-2xl p-6 space-y-3 border
+                 bg-white border-slate-200 shadow-sm shadow-slate-200/80
+                 dark:bg-slate-900/60 dark:border-slate-800/70 dark:shadow-black/25"
+        >
+          <p class="text-sm text-slate-700 dark:text-slate-300">
+            “The team brought clarity, structure, and creativity that we couldn’t have built internally.”
+          </p>
+          <p class="text-xs text-slate-500 dark:text-slate-400">— Foundation partner</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Long-form partner testimonials ************ -->
+  <section class="py-24 bg-white dark:bg-slate-950 text-center">
+    <div class="container max-w-5xl mx-auto space-y-12 px-4 sm:px-6">
+      <h2 class="text-3xl font-semibold tracking-tight text-slate-900 dark:text-slate-50">
+        What partners say
+      </h2>
+
+      <div class="grid gap-12 md:grid-cols-2 text-left">
+        <div
+          class="rounded-2xl p-8 space-y-4 border
+                 bg-slate-50 border-slate-200 shadow-sm shadow-slate-200/80
+                 dark:bg-slate-900/60 dark:border-slate-800/70 dark:shadow-black/25"
+        >
+          <h3 class="text-xl font-semibold text-slate-900 dark:text-slate-50">
+            TinkerHub Foundation
+          </h3>
+          <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+            “The Second Design helped us rethink how we support students. Beyond the Blueprint saw record
+            engagement, and we watched learners gain confidence, clarity, and agency in ways we had not seen
+            before.”
+          </p>
+          <p class="text-xs text-slate-500 dark:text-slate-400">
+            — Program Director, TinkerHub
+          </p>
+        </div>
+
+        <div
+          class="rounded-2xl p-8 space-y-4 border
+                 bg-slate-50 border-slate-200 shadow-sm shadow-slate-200/80
+                 dark:bg-slate-900/60 dark:border-slate-800/70 dark:shadow-black/25"
+        >
+          <h3 class="text-xl font-semibold text-slate-900 dark:text-slate-50">
+            FOSS Community Partner
+          </h3>
+          <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+            “Their approach to learning design is refreshingly real. Our students reported tangible changes in
+            the way they approach projects and collaboration.”
+          </p>
+          <p class="text-xs text-slate-500 dark:text-slate-400">
+            — Lead Organiser, FOSS
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Student / Learner Wall of Love ************ -->
+  <section
+    class="py-24 text-center border-y
+           border-slate-200 bg-slate-50
+           dark:bg-slate-950/70 dark:border-slate-800"
+  >
+    <div class="container max-w-6xl mx-auto space-y-12 px-4 sm:px-6">
+      <h2 class="text-3xl font-semibold tracking-tight text-slate-900 dark:text-slate-50">
+        Voices from learners
+      </h2>
+      <p class="text-slate-700 dark:text-slate-300 max-w-2xl mx-auto text-base leading-relaxed">
+        These are some of the messages students have shared after going through Real World Ready / Beyond the Blueprint.
+      </p>
+
+      <div class="grid gap-8 md:grid-cols-3 text-left">
+        <div
+          class="rounded-2xl p-6 space-y-3 border
+                 bg-white border-slate-200 shadow-sm shadow-slate-200/80
+                 dark:bg-slate-900/60 dark:border-slate-800/70 dark:shadow-black/25"
+        >
+          <p class="text-sm text-slate-700 dark:text-slate-300">
+            “This is the first program that made me feel I can actually design my path. I’m more confident in
+            reaching out, asking for help, and taking small steps.”
+          </p>
+        </div>
+
+        <div
+          class="rounded-2xl p-6 space-y-3 border
+                 bg-white border-slate-200 shadow-sm shadow-slate-200/80
+                 dark:bg-slate-900/60 dark:border-slate-800/70 dark:shadow-black/25"
+        >
+          <p class="text-sm text-slate-700 dark:text-slate-300">
+            “I started taking actions instead of thinking about taking actions. That shift alone was worth it.”
+          </p>
+        </div>
+
+        <div
+          class="rounded-2xl p-6 space-y-3 border
+                 bg-white border-slate-200 shadow-sm shadow-slate-200/80
+                 dark:bg-slate-900/60 dark:border-slate-800/70 dark:shadow-black/25"
+        >
+          <p class="text-sm text-slate-700 dark:text-slate-300">
+            “This has changed how I approach my goals entirely.”
+          </p>
+        </div>
+
+        <!-- Add up to 20–40 small blocks here later -->
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA *************************************** -->
+  <section class="py-24 text-center bg-white dark:bg-slate-950">
+    <div class="container max-w-3xl mx-auto space-y-6 px-4 sm:px-6">
+      <h2 class="text-3xl font-semibold tracking-tight text-slate-900 dark:text-slate-50">
+        Want to work with The Second Design?
+      </h2>
+      <p class="text-slate-700 dark:text-slate-300 text-base leading-relaxed">
+        Whether you’re a college, NGO, foundation, or company, we’re happy to explore building a serious learning
+        program with you.
+      </p>
+
+      <a
+        href="/contact"
+        class="inline-flex items-center justify-center rounded-xl
+               bg-slate-900 text-slate-50 px-6 py-3 text-sm font-semibold
+               shadow-lg shadow-blue-500/30 hover:bg-slate-800
+               dark:bg-white dark:text-slate-900 dark:hover:bg-slate-100
+               transition"
+      >
+        Book an inquiry call
+      </a>
+    </div>
+  </section>
+
+</Layout>
