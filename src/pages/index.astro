@@ -11,6 +11,7 @@ import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import TestimonialsSection from '~/components/TestimonialsSection.astro';
 
 const metadata = {
   title: 'The Second Design — Learning experiences that change people',
@@ -62,6 +63,18 @@ const metadata = {
     description="We help organisations design powerful learning environments — for employees, students, and communities. You bring the domain expertise. We bring the pedagogy, structure, and learner experience."
   />
 
+  <!-- FEATURED VIDEO TESTIMONIALS -->
+  <TestimonialsSection
+    title="What our partners and learners say"
+    subtitle="Four short clips from people who’ve worked closely with us across programs and consulting."
+    testimonialIds={[
+      'rahul-foss-video-2025',
+      'rik-designacbc-video-2022',
+      'matias-edison-consulting-2022',
+      'alejandro-edison-consulting-2022'
+    ]}
+  />
+  
   <!-- FEATURES: Who we design for -->
   <Features
     id="features"
@@ -166,6 +179,8 @@ const metadata = {
       <div class="absolute inset-0 bg-violet-500/5 dark:bg-transparent"></div>
     </Fragment>
   </Content>
+
+  
 
   <!-- BLOG -->
   <BlogLatestPosts

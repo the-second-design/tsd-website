@@ -1,0 +1,202 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import { resolvedTestimonials } from '~/data/testimonials';
+
+const metadata = {
+  title: 'Testimonials Table — The Second Design',
+  description:
+    'Flat table view of all testimonials used on The Second Design website, for internal review and curation.',
+};
+
+const testimonials = resolvedTestimonials;
+---
+
+<Layout metadata={metadata}>
+  <section class="py-12 md:py-16 bg-slate-50 dark:bg-slate-950">
+    <div class="container max-w-6xl mx-auto">
+      <header class="mb-6 md:mb-8">
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-blue-600 dark:text-blue-400 mb-3">
+          Internal docs
+        </p>
+        <h1 class="text-2xl md:text-3xl font-semibold tracking-tight text-slate-900 dark:text-white mb-2">
+          Testimonials Table
+        </h1>
+        <p class="text-sm md:text-base text-slate-700 dark:text-slate-300">
+          Flat, spreadsheet-style view of all <strong>published</strong> testimonials from
+          <code class="px-1 py-0.5 rounded bg-slate-900/5 dark:bg-slate-800/70">testimonials.json</code>.
+          Every field from the raw data (except <strong>quote_long</strong>) plus resolved person, product, and partner info.
+        </p>
+        <p class="mt-2 text-xs md:text-sm text-slate-600 dark:text-slate-400">
+          Total testimonials: <span class="font-semibold">{testimonials.length}</span>
+        </p>
+      </header>
+
+      <div class="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 shadow-sm">
+        <div class="overflow-x-auto">
+          <table class="min-w-full text-left text-[11px] md:text-xs">
+            <thead class="bg-slate-100/80 dark:bg-slate-900/80 border-b border-slate-200 dark:border-slate-800">
+              <tr class="uppercase tracking-wide text-[10px] md:text-[11px] text-slate-600 dark:text-slate-400">
+                <th class="px-3 py-2 whitespace-nowrap">testimonial_id</th>
+                <th class="px-3 py-2 whitespace-nowrap">person_id</th>
+                <th class="px-3 py-2 whitespace-nowrap">Person name</th>
+                <th class="px-3 py-2 whitespace-nowrap">Designation / company</th>
+                <th class="px-3 py-2 whitespace-nowrap">audience_type</th>
+                <th class="px-3 py-2 whitespace-nowrap">scope</th>
+                <th class="px-3 py-2 whitespace-nowrap">product_ids</th>
+                <th class="px-3 py-2 whitespace-nowrap">Products (resolved)</th>
+                <th class="px-3 py-2 whitespace-nowrap">partner_ids</th>
+                <th class="px-3 py-2 whitespace-nowrap">Partners (resolved)</th>
+                <th class="px-3 py-2 whitespace-nowrap">source_type</th>
+                <th class="px-3 py-2 whitespace-nowrap">source_url</th>
+                <th class="px-3 py-2 whitespace-nowrap">image_url</th>
+                <th class="px-3 py-2 whitespace-nowrap">image_alt</th>
+                <th class="px-3 py-2 whitespace-nowrap">quote_short</th>
+                <th class="px-3 py-2 whitespace-nowrap">rating</th>
+                <th class="px-3 py-2 whitespace-nowrap">language</th>
+                <th class="px-3 py-2 whitespace-nowrap">date</th>
+                <th class="px-3 py-2 whitespace-nowrap">priority</th>
+                <th class="px-3 py-2 whitespace-nowrap">is_published</th>
+                <th class="px-3 py-2 whitespace-nowrap">internal_notes</th>
+              </tr>
+            </thead>
+
+            <tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+              {testimonials.map((t) => (
+                <tr class="align-top hover:bg-slate-50 dark:hover:bg-slate-900/60">
+
+                  <td class="px-3 py-2 font-mono text-[10px] text-slate-800 dark:text-slate-100 whitespace-nowrap">
+                    {t.testimonial_id}
+                  </td>
+
+                  <td class="px-3 py-2 font-mono text-[10px] text-slate-700 dark:text-slate-200 whitespace-nowrap">
+                    {t.person?.person_id ?? 'null'}
+                  </td>
+
+                  <td class="px-3 py-2 text-slate-800 dark:text-slate-100 whitespace-nowrap">
+                    {t.person?.name ?? '—'}
+                  </td>
+
+                  <td class="px-3 py-2 text-slate-700 dark:text-slate-200 min-w-[160px]">
+                    {t.person ? (
+                      <span>
+                        {t.person.designation || '—'}
+                        {t.person.company && <> · {t.person.company}</>}
+                      </span>
+                    ) : (
+                      '—'
+                    )}
+                  </td>
+
+                  <td class="px-3 py-2 text-slate-700 dark:text-slate-200 whitespace-nowrap">{t.audience_type}</td>
+
+                  <td class="px-3 py-2 text-slate-700 dark:text-slate-200 whitespace-nowrap">{t.scope}</td>
+
+                  <td class="px-3 py-2 font-mono text-[10px] text-slate-700 dark:text-slate-200 min-w-[140px]">
+                    {t.product_ids?.length ? t.product_ids.join(', ') : '[]'}
+                  </td>
+
+                  <td class="px-3 py-2 text-slate-800 dark:text-slate-100 min-w-[200px]">
+                    {t.products?.length ? (
+                      <ul class="space-y-0.5">
+                        {t.products.map((p) => (
+                          <li>
+                            <span class="font-medium">{p.name}</span>
+                            {p.variant_name && (
+                              <span class="text-slate-500 dark:text-slate-400"> – {p.variant_name}</span>
+                            )}
+                            <span class="block font-mono text-[10px] text-slate-400">({p.product_id})</span>
+                          </li>
+                        ))}
+                      </ul>
+                    ) : (
+                      <span class="text-slate-400">—</span>
+                    )}
+                  </td>
+
+                  <td class="px-3 py-2 font-mono text-[10px] text-slate-700 dark:text-slate-200 min-w-[120px]">
+                    {t.partner_ids?.length ? t.partner_ids.join(', ') : '[]'}
+                  </td>
+
+                  <td class="px-3 py-2 text-slate-800 dark:text-slate-100 min-w-[180px]">
+                    {t.partners?.length ? (
+                      <ul class="space-y-0.5">
+                        {t.partners.map((p) => (
+                          <li>
+                            {p.name}
+                            <span class="block font-mono text-[10px] text-slate-400">({p.partner_id})</span>
+                          </li>
+                        ))}
+                      </ul>
+                    ) : (
+                      <span class="text-slate-400">—</span>
+                    )}
+                  </td>
+
+                  <td class="px-3 py-2 whitespace-nowrap text-slate-700 dark:text-slate-200">
+                    {t.source_type}
+                  </td>
+
+                  <td class="px-3 py-2 min-w-[160px]">
+                    {t.source_url ? (
+                      <a href={t.source_url} target="_blank" rel="noopener noreferrer"
+                        class="text-blue-700 dark:text-blue-400 underline underline-offset-2">
+                        {t.source_url}
+                      </a>
+                    ) : (
+                      <span class="text-slate-400">null</span>
+                    )}
+                  </td>
+
+                  <td class="px-3 py-2 min-w-[140px]">
+                    {t.image_url ?? <span class="text-slate-400">null</span>}
+                  </td>
+
+                  <td class="px-3 py-2 min-w-[140px]">
+                    {t.image_alt ?? <span class="text-slate-400">null</span>}
+                  </td>
+
+                  <td class="px-3 py-2 min-w-[250px] text-slate-800 dark:text-slate-100">
+                    {t.quote_short}
+                  </td>
+
+                  <td class="px-3 py-2 whitespace-nowrap text-slate-700 dark:text-slate-200">
+                    {t.rating ?? 'null'}
+                  </td>
+
+                  <td class="px-3 py-2 whitespace-nowrap text-slate-700 dark:text-slate-200">
+                    {t.language || '—'}
+                  </td>
+
+                  <td class="px-3 py-2 whitespace-nowrap text-slate-700 dark:text-slate-200">
+                    {t.date || '—'}
+                  </td>
+
+                  <td class="px-3 py-2 whitespace-nowrap text-slate-700 dark:text-slate-200">
+                    {t.priority}
+                  </td>
+
+                  <td class="px-3 py-2 whitespace-nowrap">
+                    {t.is_published ? (
+                      <span class="inline-block px-2 py-0.5 text-[10px] font-semibold bg-green-100 text-green-800 dark:bg-green-900/40 dark:text-green-300 rounded-full">
+                        true
+                      </span>
+                    ) : (
+                      <span class="inline-block px-2 py-0.5 text-[10px] font-semibold bg-slate-200 text-slate-600 dark:bg-slate-900/50 dark:text-slate-300 rounded-full">
+                        false
+                      </span>
+                    )}
+                  </td>
+
+                  <td class="px-3 py-2 min-w-[220px] text-slate-600 dark:text-slate-300">
+                    {t.internal_notes || '—'}
+                  </td>
+
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

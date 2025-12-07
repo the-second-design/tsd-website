@@ -1,0 +1,195 @@
+---
+import testimonialsData from '~/data/testimonials.json';
+import personsData from '~/data/persons.json';
+import productsData from '~/data/products.json';
+
+interface Testimonial {
+  testimonial_id: string;
+  person_id: string | null;
+  product_ids?: string[];
+  partner_ids?: string[];
+  quote_short: string;
+  quote_long?: string;
+  source_type: string;
+  source_url: string | null;
+  audience_type?: string | null;
+  scope?: string;
+  priority?: string | null;
+  is_published?: boolean;
+}
+
+interface Person {
+  person_id: string;
+  person_name: string;
+  person_designation: string | null;
+  person_company: string | null;
+  person_partner_id?: string | null;
+  person_relationship_type?: string | null;
+}
+
+interface Product {
+  product_id: string;
+  product_name?: string | null;
+  product_category?: string | null;
+  product_variant_name?: string | null;
+  brand_label?: string | null;
+  name?: string | null;
+}
+
+interface Props {
+  title?: string;
+  subtitle?: string;
+  testimonialIds?: string[];
+}
+
+const { title = 'What partners and learners say', subtitle, testimonialIds = [] } =
+  Astro.props as Props;
+
+const allTestimonials = (testimonialsData as Testimonial[]).filter(
+  (t) => t.is_published !== false
+);
+
+let selected: Testimonial[];
+
+if (testimonialIds.length > 0) {
+  selected = testimonialIds
+    .map((id) => allTestimonials.find((t) => t.testimonial_id === id))
+    .filter(Boolean) as Testimonial[];
+} else {
+  // Fallback: take top 4 hero/high
+  selected = allTestimonials
+    .filter((t) => t.priority === 'hero' || t.priority === 'high')
+    .slice(0, 4);
+}
+
+const persons = personsData as Person[];
+const products = productsData as Product[];
+
+function getPerson(testimonial: Testimonial): Person | null {
+  if (!testimonial.person_id) return null;
+  return persons.find((p) => p.person_id === testimonial.person_id) ?? null;
+}
+
+function getProductLabel(testimonial: Testimonial): string {
+  if (!testimonial.product_ids || testimonial.product_ids.length === 0) {
+    return 'The Second Design – Brand';
+  }
+
+  const names = testimonial.product_ids
+    .map((pid) => {
+      const p = products.find((prod) => prod.product_id === pid);
+      if (!p) return null;
+
+      // Try multiple possible fields so we don't silently fall back
+      return (
+        p.product_name ||
+        p.product_variant_name ||
+        p.brand_label ||
+        p.name ||
+        null
+      );
+    })
+    .filter(Boolean) as string[];
+
+  if (names.length === 0) {
+    return 'The Second Design – Brand';
+  }
+
+  return names.join(' · ');
+}
+
+function getAudienceLabel(testimonial: Testimonial, person: Person | null): string {
+  if (person?.person_name) return person.person_name;
+  if (testimonial.audience_type) {
+    const a = testimonial.audience_type;
+    return a.charAt(0).toUpperCase() + a.slice(1);
+  }
+  return 'Learner';
+}
+
+function extractYouTubeId(url: string | null): string | null {
+  if (!url) return null;
+  try {
+    const u = new URL(url);
+    if (u.hostname === 'youtu.be') {
+      return u.pathname.slice(1);
+    }
+    const v = u.searchParams.get('v');
+    if (v) return v;
+    if (u.pathname.startsWith('/embed/')) {
+      const parts = u.pathname.split('/');
+      return parts[2] || null;
+    }
+    return null;
+  } catch {
+    return null;
+  }
+}
+---
+
+<section class="bg-slate-50 dark:bg-slate-950 py-16 sm:py-20">
+  <div class="container max-w-6xl mx-auto">
+    <header class="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
+      <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight text-slate-900 dark:text-white">
+        {title}
+      </h2>
+      {subtitle && (
+        <p class="mt-4 text-slate-600 dark:text-slate-300">
+          {subtitle}
+        </p>
+      )}
+    </header>
+
+    <div class="grid gap-8 md:grid-cols-2">
+      {selected.map((testimonial) => {
+        const person = getPerson(testimonial);
+        const productLabel = getProductLabel(testimonial);
+        const audienceLabel = getAudienceLabel(testimonial, person);
+        const youtubeId = extractYouTubeId(testimonial.source_url);
+
+        return (
+          <article class="bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 p-6 sm:p-7 flex flex-col gap-4">
+            <div class="text-xs font-semibold tracking-wide text-blue-600 dark:text-blue-400 uppercase">
+              {productLabel}
+            </div>
+
+            <p class="text-base sm:text-lg text-slate-800 dark:text-slate-100 leading-relaxed">
+              “{testimonial.quote_short}”
+            </p>
+
+            {youtubeId && (
+              <div class="mt-2 aspect-video rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800">
+                <iframe
+                  src={`https://www.youtube.com/embed/${youtubeId}`}
+                  title="Video testimonial"
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                  class="w-full h-full"
+                ></iframe>
+              </div>
+            )}
+
+            <div class="mt-4 flex items-center gap-3">
+              <div class="h-10 w-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-sm font-semibold text-slate-700 dark:text-slate-200">
+                {person?.person_name
+                  ? person.person_name.charAt(0)
+                  : audienceLabel.charAt(0)}
+              </div>
+              <div>
+                <div class="text-sm font-semibold text-slate-900 dark:text-white">
+                  {person?.person_name ?? audienceLabel}
+                </div>
+                <div class="text-xs text-slate-500 dark:text-slate-400">
+                  {person?.person_designation}
+                  {person?.person_designation && person?.person_company ? ' · ' : ''}
+                  {person?.person_company}
+                </div>
+              </div>
+            </div>
+          </article>
+        );
+      })}
+    </div>
+  </div>
+</section>
