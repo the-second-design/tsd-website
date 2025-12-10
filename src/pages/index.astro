@@ -31,38 +31,36 @@ const metadata = {
 
 <Layout metadata={metadata}>
 
-  <!-- HERO -->
-  <Hero
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Book an inquiry call',
-        href: '/contact',
-        icon: 'tabler:phone-call',
-      },
-      { text: 'Explore Real World Ready', href: '/real-world-ready' },
-    ]}
-    image={{ src: '~/assets/images/hero-image.png', alt: 'The Second Design' }}
-  >
-    <Fragment slot="title">
-      We design <span class="hidden xl:inline">learning experiences that</span>
-      <span class="text-accent dark:text-white"> transform people.</span>
-    </Fragment>
+<!-- HERO -->
+<Hero
+  actions={[
+    {
+      variant: 'primary',
+      text: 'Book an inquiry call',
+      href: '/contact',
+      icon: 'tabler:phone-call',
+    },
+    { text: 'Explore Real World Ready', href: '/real-world-ready' },
+  ]}
+  image={{ src: '~/assets/images/hero-image.png', alt: 'The Second Design' }}
+>
+  <!-- TITLE -->
+  <Fragment slot="title">
+    <span class="block sm:inline">We design</span>
+    <span class="block sm:inline text-accent dark:text-white">
+      learning experiences that transform people.
+    </span>
+  </Fragment>
 
-    <Fragment slot="subtitle">
-      <span class="hidden sm:inline text-slate-700 dark:text-slate-300">
-        The Second Design is an Education Design Studio. We work with businesses, colleges, and nonprofits
-        to turn their expertise into practical, real-world learning experiences.
-      </span>
-
-      <span class="block mb-1 sm:hidden font-bold text-blue-500">
-        The Second Design — learning environments, not just content.
-      </span>
-
-      <span class="text-slate-700 dark:text-slate-300">
-      </span>
-    </Fragment>
-  </Hero>
+  <!-- SUBTITLE -->
+  <Fragment slot="subtitle">
+    <!-- Same copy everywhere, no hiding on mobile -->
+    <span class="block text-slate-700 dark:text-slate-300">
+      The Second Design is an Education Design Studio. We work with businesses, colleges, and nonprofits
+      to turn their expertise into practical, real-world learning experiences.
+    </span>
+  </Fragment>
+</Hero>
 
   <!-- NOTE -->
   <Note
@@ -333,8 +331,7 @@ const metadata = {
     <Fragment slot="content">
       <p class="text-slate-700 dark:text-slate-300">
         Real World Ready is our flagship program for students and young professionals. It gives them structured
-        practice in starting things, working with others, and making decisions about their future with intention.
-        It often runs under co-branded names with partners, but the core promise is the same: move young people
+        practice in starting things, working with others, and making decisions about their future with intention. The core promise is the same: move young people
         from passive consumption to doing real work in the real world.
       </p>
     </Fragment>
